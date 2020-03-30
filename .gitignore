@@ -1,0 +1,12 @@
+# package directories
+node_modules
+jspm_packages
+.webpack
+
+# Serverless directories
+.serverless
+
+# testing files & directories
+junit.xml
+coverage
+jest-stare

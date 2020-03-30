@@ -1,0 +1,19 @@
+service: front-end-client
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: ${self:service}-${self:provider.stage}-${self:provider.region}
+
+provider:
+  name: aws
+
+  # Defaults
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-west-2'}
+
+functions: {} # None
+
+resources: {} # None
