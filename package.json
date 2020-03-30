@@ -4,10 +4,9 @@
   "description": "Marcus' Serverless JS Musing (Front-End)",
   "main": "index.js",
   "scripts": {
-    "swagger": "./node_modules/.bin/babel-node --plugins @babel/plugin-transform-modules-commonjs ./devops/gotswag/index.js",
-    "package": "npm run swagger; ./node_modules/.bin/serverless package",
-    "deploy": "npm run swagger; ./node_modules/.bin/serverless deploy",
-    "deploy:packaged": "./node_modules/.bin/serverless deploy --package .serverless",
+    "package": "react-scripts build",
+    "deploy": "npm run package; npm run deploy:packaged --",
+    "deploy:packaged": "./node_modules/.bin/serverless client deploy",
     "test": "./node_modules/.bin/jest -c ./devops/jest/jest.config.js",
     "test:int": "./node_modules/.bin/jest -c ./devops/jest/jest.config.int.js"
   },
@@ -24,12 +23,17 @@
     "@babel/node": "^7.8.7",
     "@babel/plugin-transform-modules-commonjs": "^7.8.3",
     "aws-sdk": "^2.645.0",
-    "babel-jest": "^25.1.0",
     "bufferutil": "^4.0.1",
     "canvas": "^2.6.1",
+    "fibers": "^4.0.2",
     "jest": "^25.1.0",
     "jest-junit": "^10.0.0",
     "jest-stare": "^1.26.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "sass": "^1.26.3",
     "serverless": "^1.64.1",
     "serverless-finch": "^2.5.2",
     "supertest": "^4.0.2",
@@ -37,5 +41,11 @@
   },
   "dependencies": {
     "axios": "^0.19.2"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
